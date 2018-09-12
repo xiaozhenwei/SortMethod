@@ -1,0 +1,49 @@
+<idea-plugin>
+  <id>com.xl.xzw.sortcode</id>
+  <name>Sort Code</name>
+  <version>1.0</version>
+  <vendor email="xiaozhenwei@xl.com" url="">xl</vendor>
+
+  <description><![CDATA[
+      Enter short description for your plugin here.<br>
+      <em>most HTML tags may be used</em>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+        <group id="sorter" text="Sort Lifecycle Methods" popup="true" description="Sorts the lifecycle methods of an activity">
+
+            <action class="Action.SortStartAction" id="sortStart" text="Place at Start of Class" description="Places the sorted methods at the start of the class">
+                <keyboard-shortcut first-keystroke="control alt K" keymap="$default"/>
+            </action>
+
+            <action class="Action.SortEndAction" id="sortEnd" text="Place at End of Class" description="Places the sorted methods at the end of the class">
+                <keyboard-shortcut first-keystroke="shift control alt K" keymap="$default"/>
+            </action>
+            <action class="Action.SortByAuthority" id="sortByAuthority" text="sort by authority" description="sort the methods by authority">
+                <keyboard-shortcut first-keystroke="shift alt A" keymap="$default"/>
+            </action>
+            <add-to-group group-id="CodeMenu" anchor="last"/>
+
+        </group>
+  </actions>
+
+</idea-plugin>
